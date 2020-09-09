@@ -1,6 +1,6 @@
 {% set name = "xvega" %}
-{% set version = "0.0.1" %}
-{% set sha256 = "395d2c6890a4d9e28764ab39569663647138a7a9430f37c08fedd04c2cbd2dff" %}
+{% set version = "0.0.2" %}
+{% set sha256 = "00c885fef75b952d12577cbc0a9c8c5132b16c4fe0fe8321858cda81999dadfe" %}
 
 package:
   name: {{ name|lower }}
