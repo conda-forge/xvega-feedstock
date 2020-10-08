@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win and vc<14]
 
 requirements:
@@ -24,10 +24,10 @@ requirements:
     - nlohmann_json
     - xproperty
     - xtl
-  run:
-    - nlohmann_json
-    - xproperty
-    - xtl
+  run_constrained:
+    - {{ pin_compatible('xtl', max_pin='x.x') }}
+    - {{ pin_compatible('xproperty', max_pin='x.x') }}
+    - {{ pin_compatible('nlohmann_json', max_pin='x.x') }}
 
 test:
   commands:
