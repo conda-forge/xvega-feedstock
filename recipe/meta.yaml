@@ -1,6 +1,6 @@
 {% set name = "xvega" %}
-{% set version = "0.0.4" %}
-{% set sha256 = "fd8e70ad11753414efe91be93ae038a6f4b8af9b05699cf981d2d74266e8b43a" %}
+{% set version = "0.0.5" %}
+{% set sha256 = "6227785c6d5c6d9676175729a0fcc9e3cd1e33f95645a60c9feb6ba2a4582cf0" %}
 
 package:
   name: {{ name|lower }}
@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win and vc<14]
 
 requirements:
@@ -33,19 +33,16 @@ test:
   commands:
     - test -d ${PREFIX}/include/xvega  # [unix]
     - test -d ${PREFIX}/include/xvega/base  # [unix]
-    - test -d ${PREFIX}/include/xvega/functions  # [unix]
     - test -d ${PREFIX}/include/xvega/grammar  # [unix]
     - test -d ${PREFIX}/include/xvega/utils  # [unix]
     - test -f ${PREFIX}/include/xvega/xvega.hpp  # [unix]
     - test -f ${PREFIX}/include/xvega/base/xvega-base.hpp  # [unix]
-    - test -f ${PREFIX}/include/xvega/functions/populate_data.hpp  # [unix]
     - test -f ${PREFIX}/include/xvega/grammar/marks.hpp  # [unix]
     - test -f ${PREFIX}/include/xvega/utils/serialize.hpp  # [unix]
     - test -f ${PREFIX}/lib/cmake/xvega/xvegaConfig.cmake  # [unix]
     - test -f ${PREFIX}/lib/cmake/xvega/xvegaConfigVersion.cmake  # [unix]
     - if exist %LIBRARY_PREFIX%\include\xvega\xvega.hpp (exit 0) else (exit 1)  # [win]
     - if exist %LIBRARY_PREFIX%\include\xvega\base\xvega-base.hpp (exit 0) else (exit 1)  # [win]
-    - if exist %LIBRARY_PREFIX%\include\xvega\functions\populate_data.hpp (exit 0) else (exit 1)  # [win]
     - if exist %LIBRARY_PREFIX%\include\xvega\grammar\marks.hpp (exit 0) else (exit 1)  # [win]
     - if exist %LIBRARY_PREFIX%\include\xvega\utils\serialize.hpp (exit 0) else (exit 1)  # [win]
     - if exist %LIBRARY_PREFIX%\lib\cmake\xvegaConfig.cmake (exit 0) else (exit 1)  # [win]
