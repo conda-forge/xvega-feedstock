@@ -53,7 +53,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: A C++ backend for vega-lite
+  summary: A C++ backend for vega
   description: vega-lite visualization system for the xeus-cling kernel
   dev_url: https://github.com/QuantStack/xvega
 
