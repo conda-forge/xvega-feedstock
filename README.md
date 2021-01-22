@@ -7,7 +7,7 @@ Package license: BSD-3-Clause
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/xvega-feedstock/blob/master/LICENSE.txt)
 
-Summary: A C++ backend for vega-lite
+Summary: A C++ backend for vega
 
 Development: https://github.com/QuantStack/xvega
 

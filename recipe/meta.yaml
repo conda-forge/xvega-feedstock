@@ -1,6 +1,6 @@
 {% set name = "xvega" %}
-{% set version = "0.0.7" %}
-{% set sha256 = "9c1ab3efab5816cb6eb7c968eac89ad860338544587669c2fb3067a40db00526" %}
+{% set version = "0.0.9" %}
+{% set sha256 = "688f5d9a60c001348873daff37636f0252047c1a8a367ada2c7fbfdc532554c5" %}
 
 package:
   name: {{ name|lower }}
@@ -22,8 +22,8 @@ requirements:
     - make  # [unix]
   host:
     - nlohmann_json
-    - xproperty
-    - xtl
+    - xproperty >=0.11.0,<0.12.0
+    - xtl >=0.7.0,<0.8.0
   run_constrained:
     - {{ pin_compatible('xtl', max_pin='x.x') }}
     - {{ pin_compatible('xproperty', max_pin='x.x') }}
@@ -32,11 +32,9 @@ requirements:
 test:
   commands:
     - test -d ${PREFIX}/include/xvega  # [unix]
-    - test -d ${PREFIX}/include/xvega/grammar  # [unix]
-    - test -d ${PREFIX}/include/xvega/utils  # [unix]
     - test -f ${PREFIX}/include/xvega/xvega.hpp  # [unix]
-    - test -f ${PREFIX}/include/xvega/grammar/marks.hpp  # [unix]
-    - test -f ${PREFIX}/include/xvega/utils/random_string.hpp  # [unix]
+    - test -f ${PREFIX}/include/xvega/marks.hpp  # [unix]
+    - test -f ${PREFIX}/include/xvega/random_string.hpp  # [unix]
     - test -f ${PREFIX}/lib/cmake/xvega/xvegaConfig.cmake  # [unix]
     - test -f ${PREFIX}/lib/cmake/xvega/xvegaConfigVersion.cmake  # [unix]
     - if exist %LIBRARY_PREFIX%\include\xvega\xvega.hpp (exit 0) else (exit 1)  # [win]
