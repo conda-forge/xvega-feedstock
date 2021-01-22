@@ -32,11 +32,9 @@ requirements:
 test:
   commands:
     - test -d ${PREFIX}/include/xvega  # [unix]
-    - test -d ${PREFIX}/include/xvega/grammar  # [unix]
-    - test -d ${PREFIX}/include/xvega/utils  # [unix]
     - test -f ${PREFIX}/include/xvega/xvega.hpp  # [unix]
-    - test -f ${PREFIX}/include/xvega/grammar/marks.hpp  # [unix]
-    - test -f ${PREFIX}/include/xvega/utils/random_string.hpp  # [unix]
+    - test -f ${PREFIX}/include/xvega/marks.hpp  # [unix]
+    - test -f ${PREFIX}/include/xvega/random_string.hpp  # [unix]
     - test -f ${PREFIX}/lib/cmake/xvega/xvegaConfig.cmake  # [unix]
     - test -f ${PREFIX}/lib/cmake/xvega/xvegaConfigVersion.cmake  # [unix]
     - if exist %LIBRARY_PREFIX%\include\xvega\xvega.hpp (exit 0) else (exit 1)  # [win]
