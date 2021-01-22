@@ -1,6 +1,6 @@
 {% set name = "xvega" %}
-{% set version = "0.0.7" %}
-{% set sha256 = "9c1ab3efab5816cb6eb7c968eac89ad860338544587669c2fb3067a40db00526" %}
+{% set version = "0.0.8" %}
+{% set sha256 = "1965e1e1efe4a1dff8ee09eaee0e568fce3ccadfd4211dfbda1b1d8a93613540" %}
 
 package:
   name: {{ name|lower }}
@@ -22,8 +22,8 @@ requirements:
     - make  # [unix]
   host:
     - nlohmann_json
-    - xproperty
-    - xtl
+    - xproperty >=0.11.0,<0.12.0
+    - xtl >=0.7.0,<0.8.0
   run_constrained:
     - {{ pin_compatible('xtl', max_pin='x.x') }}
     - {{ pin_compatible('xproperty', max_pin='x.x') }}
