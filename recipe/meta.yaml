@@ -11,7 +11,7 @@ source:
   sha256: 750a19078693b7fcf34360745390e2df6158647b317152f2be9dd766936df74b
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win and vc<14]
 
 requirements:
@@ -23,9 +23,9 @@ requirements:
   host:
     - nlohmann_json
     - xproperty >=0.12.0,<0.13.0
-  run_constrained:
+  run:
     - {{ pin_compatible('xproperty', max_pin='x.x') }}
-    - {{ pin_compatible('nlohmann_json', max_pin='x.x') }}
+    - {{ pin_compatible('nlohmann_json', max_pin='x.x.x') }}
 
 test:
   commands:
